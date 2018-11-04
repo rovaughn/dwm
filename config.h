@@ -22,7 +22,7 @@ static const char *colors[][3]      = {
 	[SchemeNorm] = { col_white, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 	[SchemeWarn] =	 { col_black, col_yellow, col_red },
-	[SchemeUrgent]=	 { col_white, col_red,    col_red },
+	[SchemeUrgent]=	 { col_black, col_red,    col_red },
 };
 
 /* tagging */
@@ -67,9 +67,11 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", "fish", NULL };
 static const char *browsercmd[]  = { "google-chrome", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
+//static const char *dimcmd[]  = { "xbacklight", "-dec", "1", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	//{ MODKEY,                       XF86MonBrightnessDown,  spawn,           {.v = dimcmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
@@ -104,7 +106,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
 };
 
 /* button definitions */
